@@ -69,9 +69,7 @@ def sendData(connection, packet):
     if loginB in online:
         online[loginB].sendall(createPack.create('1', loginA, None, loginB, packet["DATA"]))
     else:
-        print(loginB)
-        print(online)
-        connection.sendall(createPack.create('1', loginA, None, None, '0'))
+        connection.sendall(createPack.create('1', loginA, None, None, '0'.encode('utf-8')))
 
 
 def regist(connection, packet):
